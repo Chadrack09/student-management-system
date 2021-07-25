@@ -1,0 +1,38 @@
+/** Link to boostrap theme **/
+@import url(bootstrap.css);
+/** Importing fonts from Google Fonts **/
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;400;500;600&display=swap");
+body {
+  font-family: "IBM Plex Sans";
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.log-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.log-container .form-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 0.2rem;
+}
+.log-container .img-content {
+  display: flex;
+  align-items: center;
+}
+
+.log-container1 {
+  display: flex;
+  flex-direction: column;
+}
+.log-container1 .form-column1 {
+  display: flex;
+  flex-direction: column;
+}
+
+/*# sourceMappingURL=style.css.map */
