@@ -9,8 +9,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import za.ac.cput.dbconnect.DBConnect;
 
 /**
@@ -41,7 +39,7 @@ public class CourseDelete extends HttpServlet {
         }
       } 
       catch (SQLException ex) {
-        System.out.println(ex.getMessage());
+        out.println(ex.getMessage());
       }
     } 
     

@@ -8,15 +8,9 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import za.ac.cput.dbconnect.DBConnect;
 import za.ac.cput.dbentity.CoursesDAO;
 import za.ac.cput.studentcrud.CourseCRUD;
 import za.ac.cput.studentcrud.Crud;
@@ -30,7 +24,6 @@ import za.ac.cput.studentcrud.Crud;
  * @since: 25 Jul 2021 | 04:25:09
  */
 public class Course extends HttpServlet {
-
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -41,7 +34,7 @@ public class Course extends HttpServlet {
         
         String query = "SELECT * FROM courses";
         
-        Crud crud = new CourseCRUD();
+        Crud<CoursesDAO> crud = new CourseCRUD();
         list = crud.select(query);
         
         HttpSession session = request.getSession();
@@ -51,7 +44,7 @@ public class Course extends HttpServlet {
         rd.forward(request, response);
       } 
       catch (SQLException ex) {
-        System.out.println(ex.getMessage());
+        out.println(ex.getMessage());
       }
     } 
     

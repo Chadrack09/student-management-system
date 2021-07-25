@@ -7,7 +7,6 @@ package za.ac.cput.studentcrud;
 
 import java.sql.SQLException;
 import java.util.List;
-import za.ac.cput.dbentity.CoursesDAO;
 
 /**
  *

@@ -39,7 +39,7 @@ public class CourseEdited extends HttpServlet {
         response.sendRedirect("Course");
       } 
       catch (SQLException ex) {
-        System.out.println(ex.getMessage());
+        out.println(ex.getMessage());
       }
         
     } 

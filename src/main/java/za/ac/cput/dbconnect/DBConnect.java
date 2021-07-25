@@ -2,14 +2,7 @@ package za.ac.cput.dbconnect;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import za.ac.cput.dbentity.CoursesDAO;
 /**
  *
  * @author    Chadrack B. Boudzoumou
@@ -37,29 +30,6 @@ public class DBConnect {
     } catch (ClassNotFoundException ex) {
       System.out.println(ex.getMessage());
     }
-    
     return con;
-  }
-  
-//  public static void main(String[] args) throws SQLException {
-//    Connection con = DBConnect.makeConnection();
-//    Statement st = con.createStatement();
-//    
-//    String sql = "select coursename, duration from courses";
-//    ResultSet rs = st.executeQuery(sql);
-//    
-//    List<Courses> list = new ArrayList<>();
-//    while(rs.next()) {
-//      CoursesDAO c = new CoursesDAO();
-//      c.setCourseName(rs.getString("coursename"));
-//      c.setDuration(rs.getString("duration"));
-//      
-//      
-//      list.add(c);
-//    }
-//    
-//    System.out.println("----------------[  List  ]----------------");
-//    System.out.println(list);
-//  }
-  
+  }  
 }

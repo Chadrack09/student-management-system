@@ -1,6 +1,5 @@
 package za.ac.cput.servlets;
 
-import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -8,13 +7,9 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import za.ac.cput.dbconnect.DBConnect;
 import za.ac.cput.dbentity.CoursesDAO;
 import za.ac.cput.studentcrud.CourseCRUD;
 import za.ac.cput.studentcrud.Crud;
@@ -38,7 +33,7 @@ public class CourseEdit extends HttpServlet {
       try {
         
         String query = "select * from courses where id='"+id+"' ";
-        Crud crud = new CourseCRUD();
+        Crud<CoursesDAO> crud = new CourseCRUD();
         list = crud.select(query);
         
         HttpSession session = request.getSession();
@@ -47,7 +42,7 @@ public class CourseEdit extends HttpServlet {
         response.sendRedirect("courseEdit.jsp");
       } 
       catch (SQLException ex) {
-        System.out.println(ex.getMessage());
+        out.println(ex.getMessage());
       }
     } 
     

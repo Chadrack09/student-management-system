@@ -11,8 +11,6 @@ import jakarta.servlet.http.HttpSession;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import za.ac.cput.dbentity.BatchDAO;
 import za.ac.cput.dbentity.CoursesDAO;
 import za.ac.cput.dbentity.StudentDAO;
@@ -47,13 +45,13 @@ public class Student extends HttpServlet {
         
       try {
         
-        Crud courseCrud = new CourseCRUD();
+        Crud<CoursesDAO> courseCrud = new CourseCRUD();
         courseList = courseCrud.select(courseQuery);
         
-        Crud batchCrud = new BatchCRUD();
+        Crud<BatchDAO> batchCrud = new BatchCRUD();
         batchList = batchCrud.select(batchQuery);
         
-        Crud studentCrud = new StudentCRUD();
+        Crud<StudentDAO> studentCrud = new StudentCRUD();
         studentList = studentCrud.select(studentQuery);
         
         out.println("All Lists");

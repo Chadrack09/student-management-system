@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 import za.ac.cput.dbconnect.DBConnect;
 import za.ac.cput.dbentity.BatchDAO;
-import za.ac.cput.dbentity.CoursesDAO;
 
 /**
  *
@@ -21,7 +20,7 @@ import za.ac.cput.dbentity.CoursesDAO;
 public class BatchCRUD implements Crud {
   
   public static void main(String[] args) throws SQLException {
-    Crud bcrud = new BatchCRUD();
+    Crud<BatchDAO> bcrud = new BatchCRUD();
     String query = "SELECT * FROM batch";
     List<BatchDAO> list = new ArrayList();
     list = bcrud.select(query);
